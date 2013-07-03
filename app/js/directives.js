@@ -5,19 +5,21 @@
 // add a namespace for custom directives
 angular.module('myApp.directives', []);
 
-angular.module('myApp.directives').directive('mySlider', function() {
-    return {
-        restrict: 'E',
-        transclude: true,
-        templateUrl: 'views/slider.html',
-        scope: {},
-        link: function(scope, element, attrs)
-        {
-            var max = scope.max;
-            var min = scope.min;
-            var step = scope.step;
-        }
-    };
+angular.module('myApp.directives').directive('slider', function () {
+	return {
+		restrict: 'E',
+		scope: { value: '=value' },
+		templateUrl: '/partials/slider.html',
+		controller: function ($scope, $element, $attrs, $rootScope) {
+			$element.slider().on('slide', function (ev) {
+				$scope.$apply(function () {
+					$rootScope[$attrs.value] = ev.value;
+				});
+			});
+		},
+		replace: true,
+		link: function (scope, elem, attr) {}
+	};
 });
 
 angular.module('myApp.directives').directive('myBlinker', function() {
