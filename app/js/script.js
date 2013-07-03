@@ -1,26 +1,7 @@
-'use strict';
-
-/* Directives */
-
 // add a namespace for custom directives
 angular.module('myApp.directives', []);
 
-angular.module('myApp.directives').directive('mySlider', function() {
-    return {
-        restrict: 'E',
-        transclude: true,
-        templateUrl: 'views/slider.html',
-        scope: {},
-        link: function(scope, element, attrs)
-        {
-            var max = scope.max;
-            var min = scope.min;
-            var step = scope.step;
-        }
-    };
-});
-
-angular.module('myApp.directives').directive('myBlinker', function() {
+angular.module('myApp.directives').directive('blink', function() {
     return {
         restrict: 'E',
         transclude: true,
@@ -50,3 +31,7 @@ angular.module('myApp.directives').directive('myBlinker', function() {
         }
     };
 });
+
+function myController($scope) {
+    $scope.format = 'M/d/yy h:mm:ss a';
+}

@@ -1,8 +1,3 @@
-# MiniProject: Angular Slider Directive
-
-The Angular Slider Project is based upon the Angular Seed.
-
-
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
