@@ -1,13 +1,11 @@
 'use strict';
 
-// add a namespace for custom directives
-angular.module('myApp.directives', []);
+/* Directives */
 
-angular.module('myApp.directives').directive('blink', function() {
-    return {
-        restrict: 'E',
-        transclude: true,
-        template: '<marquee scrollamount="100%" ng-transclude></marquee>'
-    };
-});
-<blink>Bring the blink back!</blink>
+
+angular.module('myApp.directives', [])
+    .directive('blink', function() {
+        return {
+            template: '<marquee scrollamount="100%">Blink!</marquee>'
+        };
+    });
