@@ -5,22 +5,30 @@
 // add a namespace for custom directives
 angular.module('myApp.directives', []);
 
-angular.module('myApp.directives').directive('slider', function () {
-	return {
-		restrict: 'E',
-		scope: { value: '=value' },
-		templateUrl: '/partials/slider.html',
-		controller: function ($scope, $element, $attrs, $rootScope) {
-			$element.slider().on('slide', function (ev) {
-				$scope.$apply(function () {
-					$rootScope[$attrs.value] = ev.value;
-				});
-			});
-		},
-		replace: true,
-		link: function (scope, elem, attr) {}
-	};
-});
+angular.module('myApp.directives')
+	.directive('slider', function () {
+		return{
+			require: 'ngModel',
+			restrict: 'E',
+			template: '<input type="range" min="{{min}}" max="{{max}}" step="{{step}}" ng-model="sliderValue">',
+			scope: {
+				min: '@',
+				max: '@',
+				step: '@',
+				ranges: '@',
+				sliderValue: '=ngModel'
+			},
+			link: function (scope, elem, attrs) {
+				var sliderRange = function (value) {
+					for (var i = 0; i < scope.ranges.length; i++) {
+						if ((value >= scope.ranges[i].from) && (value <= scope.ranges[i].to)) {
+							// do logic to determine color here
+						}
+					}
+				};
+			}
+		}
+	});
 
 angular.module('myApp.directives').directive('myBlinker', function() {
     return {
