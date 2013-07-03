@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <title>My AngularJS App</title>
     <link rel="stylesheet" href="css/app.css"/>
-    <link href="css/slider.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
 <div  ng-controller="myController">
     <slider min="0" max="250" step="10" ng-model=></slider>
-    {{max}}
+    <label>{{ max }}</label>
 </div>
+
 
 <script src="lib/angular/angular.js"></script>
 <script src="js/app.js"></script>
@@ -20,7 +19,5 @@
 <script src="js/controllers.js"></script>
 <script src="js/filters.js"></script>
 <script src="js/directives.js"></script>
-<script src="lib/jquery-1.9.1.min.js"></script>
-<script src="lib/bootstrap-slider.js"></script>
 </body>
 </html>
