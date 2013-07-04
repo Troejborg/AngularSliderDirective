@@ -8,8 +8,10 @@
 <body>
 
 <div  ng-controller="myController">
-    <slider min="0" max="250" step="10" ng-model=></slider>
-    <label>{{ max }}</label>
+    <slider min="0" max="250" step="10" value="sliderValue" ranges='{"from": 0, "to" :100, "color": "red"}'>
+    </slider>
+
+    <label>{{ sliderValue }}</label>
 </div>
 
 
