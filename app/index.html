@@ -3,18 +3,32 @@
 <head>
     <meta charset="utf-8">
     <title>My AngularJS App</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/eggplant/jquery-ui.min.css"/>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 
 <div  ng-controller="myController">
-    <slider min="0" max="250" step="10" value="sliderValue" ranges='{"from": 0, "to" :100, "color": "red"}'>
+    <slider
+            min="0"
+            max="250"
+            step="10"
+            ng-model="sliderValue"
+            ranges='[
+    	{"from": 0, "to" :100, "color": "red"},
+    	{"from": 100, "to" :150, "color": "blue"},
+    	{"from": 150, "to" : 250, "color":"green"}
+    	]'>
+
     </slider>
 
-    <label>{{ sliderValue }}</label>
+    <div ng-show="sliderValue" class='alert alert-info sliderValue'>
+        {{ sliderValue }}
+    </div>
 </div>
-
-
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>

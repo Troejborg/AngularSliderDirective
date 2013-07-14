@@ -28,3 +28,35 @@
   content: "";
   padding: 0;
 }
+.slide {
+    margin-top: 20px;
+    margin-left:20px;
+    background: gray;
+    height:10px;
+    border-radius:0;
+    border:1px solid black;
+}
+.slide-back {
+    position:absolute;
+    height:100%;
+}
+
+.ui-slider .ui-slider-handle{
+    width:10px;
+    height:30px;
+    position:absolute;
+    top: -10px;
+    border-style:none;
+    border-radius:0;
+    background-color:black;
+    background-image:none;
+}
+
+.sliderValue{
+    text-align: center;
+    width:50px;
+    padding:10px;
+    font-size:20pt;
+    margin-top:30px;
+    margin-left:20px;
+}
