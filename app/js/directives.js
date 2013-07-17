@@ -35,11 +35,11 @@ angular.module('myApp.directives')
 					}
 				});
 
-				element.width(attrs.max).slider({
-					min: parseInt(attrs.min,10),
-					max: parseInt(attrs.max, 10),
+				element.width(max).slider({
+					min: parseInt(min,10),
+					max: parseInt(max, 10),
 					value: scope.ngModel,
-					step: parseInt(attrs.step, 10)
+					step: parseInt(step, 10)
 				});
 
 				element.bind( "slide",function( event, ui ) {
